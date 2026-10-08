@@ -135,6 +135,54 @@ html.mob .hud{width:calc(100% - 128px)}
 .why{margin-top:12px;padding:11px 14px;border-radius:14px;background:var(--glass);border-left:3px solid var(--ink);font-size:14px;line-height:1.5;color:var(--ink2)}.why b{display:block;font-size:12px;color:var(--ink);margin-bottom:3px}
 .cd .ch{margin-top:12px}
 @media(max-width:760px){.sp::before{left:21px}.fz::before{left:21px}.ev,.ev.r{width:100%;margin:0;padding:0 0 26px 48px}.ev::after,.ev.r::after{left:14px;right:auto}.cd,.ev.r .cd{transform:translateY(30px) scale(.94)}.era{text-align:left;padding-left:2px}}
+/* v7 */
+.orbit{translate:none!important}
+html.mob .scr{scroll-snap-type:y proximity}html.mob .era,html.mob .ev,html.mob .ev.r{scroll-snap-stop:normal}
+.scm{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:14px;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s}.scm.on{opacity:1;visibility:visible;transition:opacity .4s}
+.scb{width:min(720px,100%);max-height:100%;border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
+.sch{display:flex;justify-content:space-between;align-items:center;font-size:18px}.sch button{font-size:18px;color:var(--ink2)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button{padding:8px 14px;border-radius:16px;background:var(--glass);border:1px solid var(--edge);font-size:14px}.tabs button.on{background:var(--ink);color:var(--bg)}
+#sbox{flex:1;min-height:40vh;border-radius:18px;border:1px solid var(--edge);background:var(--glass);color:var(--ink);padding:16px;font-size:16px;line-height:1.65;font-family:inherit;resize:none;outline:0;user-select:text;-webkit-user-select:text}
+.sca{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.sca .chip{background:var(--ink);color:var(--bg)}#scm{color:var(--ink2);font-size:13px}
+.ask{display:flex;gap:8px}.ask input{flex:1;min-width:0;height:44px;border-radius:22px;border:1px solid var(--edge);background:var(--glass);color:var(--ink);padding:0 16px;font:inherit;font-size:16px;outline:0;user-select:text;-webkit-user-select:text}
+.abtn{flex:none;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:18px}#ao{margin-top:12px;font-size:16px}
+.lg{position:fixed;left:max(14px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom,0px));display:flex;gap:6px;z-index:3}.lg button{padding:6px 11px;border-radius:12px;font-size:12px;color:var(--ink2);background:var(--glass);border:1px solid var(--edge)}body.dive .lg{display:none}
+@media(max-width:520px){.lg{bottom:34px}}
+/* v6 */
+.bar{width:min(var(--w,620px),100%)}
+.fld{position:relative;flex:1;min-width:0;height:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22px);mask-image:linear-gradient(90deg,transparent,#000 22px)}
+#q{position:absolute;inset:0;width:100%;color:transparent;caret-color:transparent}#q::selection{background:transparent}
+#ty{position:absolute;left:0;top:50%;translate:0 -50%;white-space:pre;display:flex;align-items:center;font:500 21px inherit;font-family:inherit;letter-spacing:-.01em;pointer-events:none}
+html.mob #ty{font-size:19px}
+#ty .c{display:inline-block;white-space:pre;animation:pop .42s cubic-bezier(.2,1.1,.3,1) both}
+@keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.6);filter:blur(6px)}60%{opacity:1}to{opacity:1;transform:none;filter:blur(0)}}
+#ty .caret{width:2.5px;height:26px;margin-left:2px;border-radius:2px;background:var(--ink);animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+@media(hover:none){.ring:hover,.ring:hover .nd{animation-play-state:running}}
+#tree{position:absolute;inset:0;z-index:1;overflow:auto;display:none;opacity:0;cursor:grab;overscroll-behavior:contain;scrollbar-width:thin;transition:opacity .8s}
+.tv.ready.tree #tree{display:block;opacity:1}.tv.tree .scr{display:none}
+.tw{position:relative}
+.rul{position:sticky;top:0;height:104px;z-index:3;pointer-events:none;background:linear-gradient(var(--bg) 60%,transparent)}
+.rul i{position:absolute;top:70px;font-style:normal;font-size:13px;font-weight:700;color:var(--ink2);font-variant-numeric:tabular-nums}
+.ts{position:absolute;left:0;top:0;pointer-events:none}.gd line{stroke:var(--edge);stroke-dasharray:3 8}
+.ts path{fill:none;stroke:var(--ink);stroke-opacity:.3;stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:1;animation:dd 1.4s ease forwards calc(var(--k)*30ms + .5s);transition:stroke-opacity .3s}
+.ts path.xe{stroke-opacity:.6;stroke-width:2.2}@keyframes dd{to{stroke-dashoffset:0}}
+.ts.f path{stroke-opacity:.06}.ts.f path.on{stroke-opacity:1;stroke-width:2.8}
+.tn{position:absolute;width:190px;height:118px;padding:11px 13px;border-radius:18px;text-align:left;color:var(--ink);overflow:hidden;display:flex;flex-direction:column;gap:3px;background:linear-gradient(var(--glass),var(--glass2)),var(--bg);border:1px solid var(--edge);animation:tin .7s cubic-bezier(.2,1,.3,1) calc(var(--k)*30ms) backwards;transition:transform .3s cubic-bezier(.2,1.3,.3,1),box-shadow .3s}
+@keyframes tin{from{opacity:0;transform:translateY(24px) scale(.9)}}
+.tn b{font-size:17px;letter-spacing:-.02em}.tn p{flex:1;font-size:12.5px;line-height:1.35;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.tn small{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tn.fu{border-style:dashed}
+.tn:hover,.tn.sel{transform:translateY(-4px) scale(1.04);z-index:2;box-shadow:0 0 0 1.5px var(--ink),0 20px 40px -12px var(--sh)}
+#dr{position:absolute;right:16px;bottom:16px;width:min(430px,100% - 32px);max-height:62%;overflow:auto;border-radius:26px;padding:22px;z-index:6;transform:translateY(30px);opacity:0;visibility:hidden;transition:.5s cubic-bezier(.2,1,.3,1)}
+#dr.on{transform:none;opacity:1;visibility:visible}#dr .x{position:absolute;right:14px;top:12px;font-size:18px;color:var(--ink2)}
+#dr p{margin:10px 0;font-size:16px;line-height:1.6}#dr h4{margin:16px 0 8px;font-size:12px;color:var(--ink2)}.dl{color:var(--ink2);font-size:13px;font-weight:600}
+.lk2{display:block;width:100%;text-align:left;padding:10px 12px;margin-bottom:6px;border-radius:14px;background:var(--glass);font-size:13px;line-height:1.4;color:var(--ink2)}.lk2 b{color:var(--ink)}
+html.mob #dr{left:8px;right:8px;width:auto;bottom:8px;max-height:58%}
+.mdb{margin-left:auto;padding:5px 12px;border-radius:14px;background:var(--ink);color:var(--bg);font-size:12px;font-weight:700}
+.emp{max-width:520px;margin:0 auto;padding:30vh 24px 0;text-align:center}.emp h2{font-size:28px;letter-spacing:-.02em}.emp p{margin:10px 0 20px;color:var(--ink2)}.emp .ch{justify-content:center;margin-bottom:20px}
+#more{position:fixed;left:50%;translate:-50% 0;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:60;padding:12px 22px;font-weight:600;color:var(--ink)}body:not(.dive) #more{display:none}
+#rd{position:fixed;inset:0;z-index:90;background:var(--bg);overflow:auto;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s}#rd.on{opacity:1;visibility:visible;transition:opacity .4s}
+.rdi{max-width:720px;margin:0 auto;padding:96px 22px 140px}.rdi h1{font-size:clamp(34px,6vw,52px);margin-bottom:14px}.rdi h2{font-size:28px;margin:38px 0 12px;letter-spacing:-.02em}.rdi h3,.rdi h4{font-size:21px;margin:26px 0 8px}.rdi p{font-size:18px;line-height:1.75;margin:0 0 16px}
+.rdh{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:12px;right:12px;height:52px;border-radius:26px;display:flex;align-items:center;gap:12px;padding:0 8px 0 20px;z-index:2}.rdh b{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rdh button{width:38px;height:38px;border-radius:50%;font-size:18px}
 </style></head>
 <body>
 <div id="spl"><div class="sw"><div id="sn">Orbit</div><div class="sb"><i id="sbar"></i></div><p id="sp"><b id="spc">0</b>%</p></div></div>
@@ -174,7 +222,7 @@ const el=id=>document.getElementById(id);
 const $=id=>document.getElementById(id),q=$('q'),sg=$('sg'),stage=$('stage'),orbit=$('orbit'),panel=$('panel'),trailEl=$('trail');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';'),enc=encodeURIComponent;
 const W='https://en.wikipedia.org/w/api.php?format=json&origin=*&';
-const get=u=>fetch(u).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()});
+const get=u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),9000);return fetch(u,{signal:c.signal}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).finally(()=>clearTimeout(t))};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let trail=[],token=0,sgTok=0,sgT;
 const EX=['Black hole','Nikola Tesla','Taj Mahal','Bitcoin','Octopus','Mount Everest'];
@@ -214,7 +262,7 @@ async function dive(title,exact){
     const [sm,fx,rl]=await Promise.all([
       get('https://en.wikipedia.org/api/rest_v1/page/summary/'+enc(title.replace(/ /g,'_'))),
       get(W+'action=query&prop=extracts&explaintext=1&exchars=8000&redirects=1&titles='+enc(title)),
-      get(W+'action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages&piprop=thumbnail&pithumbsize=240&gsrsearch='+enc('morelike:'+title)).catch(()=>({})),
+      get(W+'action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages&piprop=thumbnail&pithumbsize=240&pilicense=any&gsrsearch='+enc('morelike:'+title)).catch(()=>({})),
       sleep(450)]);
     if(my!==token)return;
     title=sm.title||title;
@@ -242,7 +290,7 @@ function drawPanel(sm,d,title){
   const words=(d.top.join(' ')||sm.extract||'').split(' ').map((w,i)=>`<span style="--i:${i}">${esc(w)}</span>`).join('');
   panel.scrollTop=0;
   panel.innerHTML=`<h2>${esc(title)}</h2><p class="ds">${esc(sm.description||'')}</p><h3>The short version</h3><p class="tl">${words}</p>`
-   +(d.tm.length?`<h3>Timeline</h3><ul class="tm">${d.tm.map((a,i)=>`<li style="animation-delay:${.5+i*.12}s"><b>${a[0]}</b>${esc(a[1].length>130?a[1].slice(0,127)+'…':a[1])}</li>`).join('')}</ul>`:'')
+   +(d.tm.length?`<h3>Timeline</h3><ul class="tm">${d.tm.map((a,i)=>`<li style="animation-delay:${.5+i*.12}s"><b>${a[0]}</b>${esc(a[1])}</li>`).join('')}</ul>`:'')
    +(d.terms.length?`<h3>Keep diving</h3><div class="ch">${d.terms.map(t=>`<button class="chip" data-t="${esc(t)}">${esc(t)}</button>`).join('')}</div>`:'')
    +`<div class="ac"><a class="chip" href="${esc(url)}" target="_blank" rel="noopener">Read on Wikipedia ↗</a><a class="chip" href="https://www.youtube.com/results?search_query=${enc(title)}" target="_blank" rel="noopener">Watch videos ↗</a><a class="chip" href="https://www.google.com/search?tbm=isch&q=${enc(title)}" target="_blank" rel="noopener">Images ↗</a></div><small class="meta">About ${d.mins} min of reading, boiled down. Text from Wikipedia (CC BY-SA).</small>`;
 }
@@ -380,5 +428,169 @@ drawPanel=function(sm,d,title){_dp2(sm,d,title);
   if(MOB)snap('half')};
 addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==q&&!document.body.classList.contains('dive')){e.preventDefault();q.focus()}});
 orbitReady('gfx');
+
+/* ===== v7 ===== */
+const barEl=document.querySelector('.bar'),ty=document.createElement('div'),fld=document.createElement('div'),chars6=[],rm6=matchMedia('(prefers-reduced-motion:reduce)').matches;let lastV='';
+ty.id='ty';ty.innerHTML='<span class="caret"></span>';fld.className='fld';q.before(fld);fld.append(ty,q);const tcar=ty.firstChild;
+function shat(el){if(rm6||!el.textContent.trim())return;const r=el.getBoundingClientRect(),cs=getComputedStyle(el),R=Math.random;
+  ['inset(0 50% 50% 0)','inset(0 0 50% 50%)','inset(50% 50% 0 0)','inset(50% 0 0 50%)'].forEach((c,i)=>{const s=document.createElement('span');s.textContent=el.textContent;
+    s.style.cssText=`position:fixed;left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;line-height:${r.height}px;font-size:${cs.fontSize};font-weight:${cs.fontWeight};font-family:${cs.fontFamily};color:${cs.color};clip-path:${c};pointer-events:none;z-index:999;white-space:pre`;
+    document.body.appendChild(s);const dx=(i%2?1:-1)*(10+R()*26),dy=(i<2?-1:1)*(6+R()*10);
+    s.animate([{transform:'none',opacity:1},{transform:`translate(${dx}px,${dy-14}px) rotate(${(R()-.5)*90}deg)`,opacity:1,offset:.3},{transform:`translate(${dx*1.6}px,${dy+60+R()*40}px) rotate(${(R()-.5)*260}deg) scale(.3)`,opacity:0}],{duration:650+R()*350,easing:'cubic-bezier(.3,.6,.4,1)'}).onfinish=()=>s.remove()});
+  for(let i=0;i<8;i++){const d=document.createElement('i'),z=1.5+R()*3;d.style.cssText=`position:fixed;left:${r.left+R()*r.width}px;top:${r.top+R()*r.height}px;width:${z}px;height:${z}px;border-radius:50%;background:${cs.color};pointer-events:none;z-index:999`;document.body.appendChild(d);
+    d.animate([{transform:'none',opacity:1},{transform:`translate(${(R()-.5)*70}px,${20+R()*50}px) scale(0)`,opacity:0}],{duration:500+R()*500,easing:'ease-out'}).onfinish=()=>d.remove()}}
+function render6(){const v=q.value;lastV=v;let p=0;const n=Math.min(chars6.length,v.length);while(p<n&&chars6[p].textContent===v[p])p++;
+  chars6.splice(p).forEach(s=>{shat(s);s.remove()});
+  for(let i=p;i<v.length;i++){const s=document.createElement('span');s.className='c';s.textContent=v[i];ty.insertBefore(s,tcar);chars6.push(s)}
+  barEl.style.setProperty('--w',Math.min(900,Math.max(620,260+v.length*13))+'px');ty.style.left=-Math.max(0,ty.offsetWidth-fld.clientWidth+8)+'px'}
+q.addEventListener('input',render6);setInterval(()=>{if(q.value!==lastV)render6()},120);
+
+/* planets always get an image */
+const IMC={},hue=s=>Math.abs([...s].reduce((a,c)=>a*31+c.charCodeAt(0)|0,7))%360;
+async function imgFor(t){if(t in IMC)return IMC[t];let u=null;
+  try{const r=await get('https://en.wikipedia.org/api/rest_v1/page/summary/'+enc(t.replace(/ /g,'_')));u=r.thumbnail&&r.thumbnail.source}catch(e){}
+  if(!u)try{const c=await get('https://commons.wikimedia.org/w/api.php?format=json&origin=*&action=query&generator=search&gsrnamespace=6&gsrlimit=1&prop=imageinfo&iiprop=url&iiurlwidth=240&gsrsearch='+enc(t));u=Object.values(c.query.pages)[0].imageinfo[0].thumburl}catch(e){}
+  return IMC[t]=u}
+function art(){orbit.querySelectorAll('.im,.sun').forEach(el=>{if(el.style.backgroundImage)return;const nd=el.closest('.nd'),t=nd?nd.dataset.t:(trail[trail.length-1]||''),h=hue(t);
+  el.textContent='';el.style.backgroundImage=`radial-gradient(circle at 30% 25%,hsl(${h} 60% 55%),hsl(${(h+50)%360} 55% 20%) 70%,#050505)`;
+  imgFor(t).then(u=>{if(u)el.style.backgroundImage=`url("${u}")`})})}
+const _dg=drawGalaxy;drawGalaxy=function(sm,rel){_dg(sm,rel);art()};
+
+/* tech-tree timeline */
+document.body.insertAdjacentHTML('beforeend','<div id="rd"></div><button id="more" class="chip gl" hidden>Read more ↑</button><div class="scm" id="scm2"></div><div class="lg"><button id="lgs">⬇ Logo SVG</button><button id="lgp">⬇ Logo PNG</button></div>');
+tv.insertAdjacentHTML('beforeend','<div id="tree"></div><aside id="dr" class="gl"></aside>');
+const trEl=$('tree'),dr=$('dr'),rd=$('rd'),moreB=$('more');let TD=null;const TW=190,TH=118;
+const mdb=document.createElement('button');mdb.id='mdb';mdb.className='mdb';mdb.textContent='Story';$('he').after(mdb);
+function buildTree(fin){let fj=0;fin.forEach(e=>e.ty=e.f&&e.y>NOW+300?NOW+2+(fj++):e.y);fin.sort((a,b)=>a.ty-b.ty);
+  const first={};fin.forEach(e=>{if(first[e.lane]==null)first[e.lane]=e.ty});
+  const lanes=Object.keys(first).sort((a,b)=>(a===cur?-1:b===cur?1:first[a]-first[b])),ys=[...new Set(fin.map(e=>e.ty))],X={};let x=70;
+  ys.forEach((y,i)=>{if(i)x+=TW+34+Math.min(120,Math.sqrt(y-ys[i-1])*4);X[y]=x});
+  const rows={},lh={};fin.forEach(e=>{const k=e.lane+'|'+e.ty;e.r=rows[k]=(rows[k]||0)+1;lh[e.lane]=Math.max(lh[e.lane]||1,e.r)});
+  let yy=108;const top={};lanes.forEach(l=>{top[l]=yy;yy+=lh[l]*(TH+22)+26});
+  fin.forEach((e,i)=>{e.i=i;e.px=X[e.ty];e.py=top[e.lane]+(e.r-1)*(TH+22)});
+  const Wd=x+TW+90,Hd=yy+20,E=[];
+  lanes.forEach(l=>{const L=fin.filter(e=>e.lane===l);for(let i=1;i<L.length;i++)if(L[i].px>L[i-1].px)E.push([L[i-1].i,L[i].i,0])});
+  fin.forEach(e=>lanes.forEach(l=>{if(l===e.lane||l.length<4)return;if(new RegExp('\\b'+l.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(e.t)){const p=fin.filter(o=>o.lane===l&&o.px<e.px).pop();if(p&&!E.some(a=>a[0]===p.i&&a[1]===e.i))E.push([p.i,e.i,1])}}));
+  const P=E.map(([a,b,c],k)=>{const A=fin[a],B=fin[b],x1=A.px+TW,y1=A.py+TH/2,x2=B.px,y2=B.py+TH/2,m=(x2-x1)/2;return `<path class="${c?'xe':''}" data-a="${a}" data-b="${b}" d="M${x1} ${y1}C${x1+m} ${y1} ${x2-m} ${y2} ${x2} ${y2}" pathLength="1" style="--k:${k}"/>`}).join('');
+  const G=ys.map(y=>`<line x1="${X[y]-17}" x2="${X[y]-17}" y1="0" y2="${Hd}"/>`).join('');
+  const N=fin.map(e=>`<button class="tn${e.f?' fu':''}" data-i="${e.i}" style="left:${e.px}px;top:${e.py}px;--k:${e.i}"><b>${esc(e.l)}</b><p>${esc(e.t)}</p><small>${esc(e.lane)}</small></button>`).join('');
+  const R=ys.map(y=>`<i style="left:${X[y]}px">${esc(fin.find(o=>o.ty===y).l)}</i>`).join('');
+  trEl.innerHTML=`<div class="tw" style="width:${Wd}px;height:${Hd+40}px"><div class="rul">${R}</div><svg class="ts" width="${Wd}" height="${Hd}"><g class="gd">${G}</g>${P}</svg>${N}</div>`;TD={fin,E,X,ys}}
+function hl(i){const s=trEl.querySelector('.ts');if(!s)return;s.classList.toggle('f',i!=null);s.querySelectorAll('path').forEach(p=>p.classList.toggle('on',i!=null&&(+p.dataset.a===i||+p.dataset.b===i)))}
+trEl.addEventListener('pointerover',e=>{const n=e.target.closest('.tn');hl(n?+n.dataset.i:null)});
+function openDr(i,center){const e=TD.fin[i];hl(i);trEl.querySelectorAll('.tn').forEach(n=>n.classList.toggle('sel',+n.dataset.i===i));
+  const ins=TD.E.filter(a=>a[1]===i).map(a=>TD.fin[a[0]]),outs=TD.E.filter(a=>a[0]===i).map(a=>TD.fin[a[1]]),m=e.t.match(CAUSE);let main=e.t,why='';
+  if(m&&m.index>28){main=e.t.slice(0,m.index).replace(/[\s,;:–-]+$/,'')+'.';why=e.t.slice(m.index);why=why[0].toUpperCase()+why.slice(1)}
+  const li=(L,h)=>L.length?`<h4>${h}</h4>`+L.slice(0,6).map(o=>`<button class="lk2" data-i="${o.i}"><b>${esc(o.l)}</b> ${esc(o.t.length>90?o.t.slice(0,87)+'…':o.t)}</button>`).join(''):'';
+  const terms=[...new Set(e.t.match(/\b[A-Z][a-z]+(?: [A-Z][a-z]+)+\b/g)||[])].filter(t=>!cur.includes(t)).slice(0,4);
+  dr.innerHTML=`<button class="x" id="drx" aria-label="Close">✕</button><div class="yy">${esc(e.l)}${e.f?'<em>Ahead</em>':''}</div><div class="dl">${esc(e.lane)}</div><p>${esc(main)}</p>`+(why?`<div class="why"><b>Why it happened</b>${esc(why)}</div>`:'')+li(ins,'Built on')+li(outs,'Led to')+(terms.length?`<h4>Explore</h4><div class="ch">${terms.map(t=>`<button class="chip" data-t="${esc(t)}">${esc(t)}</button>`).join('')}</div>`:'');
+  dr.classList.add('on');dr.scrollTop=0;if(center)trEl.scrollTo({left:Math.max(0,e.px-trEl.clientWidth/2+TW/2),top:Math.max(0,e.py-trEl.clientHeight/2+TH/2),behavior:'smooth'})}
+let pd=null;trEl.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.target.closest('.tn'))return;pd=[e.clientX,e.clientY,trEl.scrollLeft,trEl.scrollTop];trEl.style.cursor='grabbing'});
+addEventListener('pointermove',e=>{if(pd){trEl.scrollLeft=pd[2]-(e.clientX-pd[0]);trEl.scrollTop=pd[3]-(e.clientY-pd[1])}});addEventListener('pointerup',()=>{pd=null;trEl.style.cursor=''});
+trEl.addEventListener('scroll',()=>{if(!TD)return;const c=trEl.scrollLeft+trEl.clientWidth*.5;let b=TD.ys[0];TD.ys.forEach(y=>{if(TD.X[y]<=c)b=y});const e=TD.fin.find(o=>o.ty===b);
+  $('hy').textContent=e.l;$('he').textContent=ERAS[e.era][2];$('pbar').style.width=trEl.scrollLeft/Math.max(1,trEl.scrollWidth-trEl.clientWidth)*100+'%'});
+tv.addEventListener('click',e=>{const t=e.target;let b;
+  if(b=t.closest('.tn'))openDr(+b.dataset.i);else if(b=t.closest('.lk2'))openDr(+b.dataset.i,1);else if(t.closest('#drx'))dr.classList.remove('on');
+  else if(b=t.closest('#tree .chip,#dr .chip')){if(b.dataset.t){closeTL();dive(b.dataset.t,false)}}
+  else if(t.closest('#rdbtn')){closeTL();openRd(cur)}
+  else if(t.closest('#mdb')){tv.classList.toggle('tree');mdb.textContent=tv.classList.contains('tree')?'Story':'Tree';dr.classList.remove('on')}});
+function storyHtml(fin){let h='',last=-1,o=0;fin.forEach((e,i)=>{if(e.era!==last){if(o)h+='</div>';last=e.era;const A=ERAS[e.era];h+=`<div class="sp${e.era===6?' fz':''}"><div class="era"><span>${A[2]}<small>${e.era===6?'What comes next':fmt(Math.max(A[0],e.y))+' onwards'}</small></span></div>`;o=1}h+=card(e,i)});return h+'</div>'}
+function empty(title,rel,err){wpRun=false;tv.classList.add('ready','tree');$('hy').textContent='';$('he').textContent='';
+  trEl.innerHTML=`<div class="emp"><h2>${err?'Couldn’t load this timeline':'Not much recorded history yet'}</h2><p>${err?'Check your connection and try again.':'Wikipedia has few dated events for “'+esc(title)+'”. Try a related topic:'}</p><div class="ch">${rel.slice(0,8).map(t=>`<button class="chip gl" data-t="${esc(t)}">${esc(t)}</button>`).join('')}</div><button class="chip" id="rdbtn" style="background:var(--ink);color:var(--bg)">Read the article</button></div>`}
+async function openTL(title){
+  const my=++tvTok;cur=title;tv.className='tv on tree';mdb.textContent='Story';scrEl.innerHTML='';trEl.innerHTML='';TD=null;dr.classList.remove('on');tv.setAttribute('aria-hidden','false');
+  $('yr').textContent=NOW;$('tvmsg').textContent='Opening the archives…';startWarp();const t0=performance.now();let rel=[];
+  try{
+    const [a,b,c]=await Promise.all(['Timeline of','History of','Future of'].map(findp));
+    const pages=[[title,0],[a,0],[b,0],[c,1]].filter(p=>p[0]);
+    const relP=get(W+'action=query&generator=search&gsrnamespace=0&gsrlimit=18&prop=extracts&exintro=1&explaintext=1&exlimit=max&gsrsearch='+enc('morelike:'+title)).catch(()=>({}));
+    $('tvmsg').textContent='Connecting the dots…';
+    const [texts,rr]=await Promise.all([Promise.all(pages.map(p=>ftext(p[0]))),relP]);
+    let ev=[];texts.forEach((t,i)=>{let e=parse(t,pages[i][1]);if(pages[i][1])e=e.slice(0,12);e.forEach(x=>x.lane=title);ev=ev.concat(e)});
+    const rp=Object.values((rr.query||{}).pages||{}).filter(p=>p.title!==title);rel=rp.map(p=>p.title);
+    rp.forEach(p=>parse(p.extract||'',0).filter(x=>!x.f).slice(0,3).forEach(x=>{x.lane=p.title;ev.push(x)}));
+    const seen=new Set();ev=ev.filter(e=>{const k=e.t.slice(0,45).toLowerCase();if(seen.has(k))return false;seen.add(k);return true});
+    const sc=e=>(e.list?2:0)+(CAUSE.test(e.t)?2:0)+(e.t.length>60&&e.t.length<230?1:0),pick=(l,n)=>l.sort((x,y)=>sc(y)-sc(x)).slice(0,n);
+    const fin=pick(ev.filter(e=>e.lane===title&&!e.f),44).concat(ev.filter(e=>e.lane!==title&&!e.f),pick(ev.filter(e=>e.f),9));
+    await sleep(Math.max(0,1700-(performance.now()-t0)));if(my!==tvTok)return;
+    if(fin.length<3){empty(title,rel);return}
+    buildTree(fin);fin.forEach(e=>e.era=e.f?6:ERAS.findIndex(a=>e.y>=a[0]&&e.y<a[1]));scrEl.innerHTML=storyHtml(fin);
+    $('tvmsg').textContent='Travelling back in time…';await countdown(fin[0].ty);if(my!==tvTok)return;
+    $('yr').textContent=fmt(fin[0].ty);$('tvmsg').textContent='Arrived';await sleep(500);if(my!==tvTok)return;
+    tv.classList.add('ready');trEl.scrollLeft=0;trEl.dispatchEvent(new Event('scroll'));
+    const io=new IntersectionObserver(es=>es.forEach(n=>{if(n.isIntersecting){n.target.classList.add('in');io.unobserve(n.target)}}),{root:scrEl,threshold:.12});
+    scrEl.querySelectorAll('.ev').forEach(n=>io.observe(n));setTimeout(()=>{if(my===tvTok)wpRun=false},1400);
+  }catch(err){if(my===tvTok)empty(title,rel,1)}}
+
+/* full reader */
+async function openRd(title){rd.classList.add('on');rd.scrollTop=0;const hd=`<div class="rdh gl"><b>${esc(title)}</b><button id="rdx" aria-label="Close">✕</button></div>`;
+  rd.innerHTML=hd+'<div class="rdi"><div class="sk" style="height:36px;width:60%"></div><div class="sk"></div><div class="sk"></div><div class="sk" style="width:80%"></div></div>';
+  try{const r=await get(W+'action=query&prop=extracts&explaintext=1&redirects=1&titles='+enc(title)),t=(Object.values(r.query.pages)[0]||{}).extract||'';let toc='',b='',skip=false,n=0;
+    t.split('\n').forEach(l=>{const h=l.match(/^(=+)\s*(.+?)\s*=+$/);if(h){skip=/^(references|external links|see also|notes|further reading|bibliography|citations)$/i.test(h[2]);if(skip)return;const lv=Math.min(4,h[1].length+1);toc+=`<button class="chip gl" data-id="r${n}">${esc(h[2])}</button>`;b+=`<h${lv} id="r${n++}">${esc(h[2])}</h${lv}>`}else if(!skip&&l.trim())b+=`<p>${esc(l)}</p>`});
+    rd.innerHTML=hd+`<div class="rdi"><h1>${esc(title)}</h1><div class="ch" style="margin-bottom:26px">${toc}</div>${b}<p><a class="chip gl" target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/${enc(title.replace(/ /g,'_'))}">Source: Wikipedia ↗</a></p></div>`}
+  catch(e){rd.innerHTML=hd+'<div class="rdi"><h2>Couldn’t load the article</h2><p>Check your connection.</p></div>'}}
+rd.addEventListener('click',e=>{if(e.target.closest('#rdx'))rd.classList.remove('on');const c=e.target.closest('[data-id]');if(c){const t=rd.querySelector('#'+c.dataset.id);t&&t.scrollIntoView({behavior:'smooth'})}});
+
+/* Ask Orbit: answers from the article text, no AI needed */
+const RAW={},raw6=async t=>RAW[t]||(RAW[t]=await ftext(t));
+const words6=t=>t.split(' ').map((w,i)=>`<span style="--i:${i}">${esc(w)}</span>`).join('');
+async function answer(title,qq){const raw=await raw6(title),S=(raw.replace(/\n=+[^\n]+=+\n/g,'\n').replace(/\([^)]*\)/g,'').match(/[^.!?\n]+[.!?]+/g)||[]).map(s=>s.trim()).filter(s=>s.length>30);
+  const skipW=['what','when','where','which','why','how','does','did','tell','about','was','who'],qw=(qq.toLowerCase().match(/[a-z0-9]{3,}/g)||[]).filter(w=>!STOP.has(w)&&!skipW.includes(w)),wh=/\b(when|year|date)\b/i.test(qq),wy=/\b(why|reason|cause)\b/i.test(qq);
+  return S.map((s,i)=>{const l=s.toLowerCase();let x=qw.reduce((a,w)=>a+(l.includes(w)?1:0),0);if(x&&wh&&/\b\d{3,4}\b/.test(s))x+=1.5;if(x&&wy&&CAUSE.test(s))x+=1.5;return[i,x]}).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,3).map(a=>a[0]).sort((a,b)=>a-b).map(i=>S[i]).join(' ')}
+
+/* creator script writer: English, Hindi, Hinglish */
+const P={
+ en:{h:[T=>`What if I told you that ${T} has a story most people never hear?`,T=>`You see ${T} everywhere, but almost nobody knows how it really began. Let's fix that.`],i:`Alright, let's start simple.`,b:`Now let's rewind the clock.`,y:(l,t)=>`Back in ${l}: ${t}`,w:`But why did this happen?`,k:x=>`A few names you should remember: ${x}.`,f:`So what's next? Here's where it's heading.`,o:T=>`That's the story of ${T}. If it made you think, like, share, and follow for more stories like this.`},
+ hn:{h:[T=>`Kya aapko pata hai ki ${T} ki kahani kitni dilchasp hai? Chaliye shuru karte hain.`,T=>`Roz dekhte hain ${T}, par iski asli kahani bahut kam log jaante hain. Aaj wahi sunte hain.`],i:`Toh sabse pehle, ek simple si baat.`,b:`Ab thoda peeche chalte hain, time machine mein.`,y:(l,t)=>`${l} ki baat hai — ${t}`,w:`Par ye hua kyun? Iska jawab ye raha.`,k:x=>`Is kahani mein kuch naam bahut important hain: ${x}.`,f:`Ab sawaal ye hai ki aage kya hoga?`,o:T=>`Toh ye thi ${T} ki poori kahani. Agar pasand aaya ho toh like karein, share karein aur channel ko subscribe karna na bhoolein. Milte hain agle video mein.`},
+ hi:{h:[T=>`क्या आप जानते हैं कि ${T} की कहानी कितनी दिलचस्प है? चलिए शुरू करते हैं।`,T=>`हम रोज़ ${T} के बारे में सुनते हैं, लेकिन इसकी असली कहानी बहुत कम लोग जानते हैं।`],i:`तो सबसे पहले, एक आसान सी बात।`,b:`अब थोड़ा पीछे चलते हैं, टाइम मशीन में।`,y:(l,t)=>`${l} की बात है — ${t}`,w:`लेकिन ये हुआ क्यों? इसका जवाब ये रहा।`,k:x=>`इस कहानी में कुछ नाम बहुत ज़रूरी हैं: ${x}।`,f:`अब सवाल ये है कि आगे क्या होगा?`,o:T=>`तो ये थी ${T} की पूरी कहानी। अगर पसंद आई हो तो लाइक करें, शेयर करें और चैनल को सब्सक्राइब करना न भूलें। मिलते हैं अगले वीडियो में।`}};
+let SD=null,sLang='en',sLen='std';
+function gen(){const D=SD,p=P[sLang],T=D.title,n={short:2,std:5,deep:9}[sLen],hiOK=sLang==='hi'&&D.hi.sum.length,pk=a=>a[Math.floor(Math.random()*a.length)];
+  const S=(hiOK?D.hi.sum:D.sum).slice(0,sLen==='short'?1:sLen==='std'?3:5),E=(sLang==='hi'&&D.hi.ev.length?D.hi.ev:D.ev).slice(0,n),o=[];
+  if(sLang==='hi'&&!hiOK)o.push('(No Hindi Wikipedia article found, so the facts below stay in English.)');
+  o.push('[HOOK]\n'+pk(p.h)(T)+(D.desc&&sLang!=='hi'?'\n'+T+' — '+D.desc+'.':''));
+  o.push('[INTRO]\n'+p.i+'\n'+S.join(' '));
+  if(E.length)o.push('[THE STORY]\n'+p.b+'\n\n'+E.map(e=>p.y(e.l,e.t.replace(/^In (?:the year )?\d{3,4},?\s*/,''))).join('\n\n'));
+  if(D.why.length&&sLen!=='short')o.push('[THE WHY]\n'+p.w+'\n'+D.why.slice(0,sLen==='deep'?3:1).join(' '));
+  if(D.terms.length&&sLen!=='short')o.push('[KEY NAMES]\n'+p.k(D.terms.slice(0,5).join(', '))+'\n(B-roll: '+D.terms.slice(0,3).join(' · ')+')');
+  if(D.fut.length&&sLen==='deep')o.push("[WHAT'S NEXT]\n"+p.f+'\n'+D.fut.slice(0,2).join(' '));
+  o.push('[OUTRO]\n'+p.o(T));const s=o.join('\n\n');$('sbox').value=s;const w=s.split(/\s+/).length;$('scm').textContent=w+' words · about '+Math.max(1,Math.round(w/150))+' min spoken'}
+$('scm2').innerHTML='<div class="scb gl"><div class="sch"><b>✍ Creator script</b><button id="scx" aria-label="Close">✕</button></div><div class="tabs" id="sctabs"><button data-l="en" class="on">English</button><button data-l="hi">हिन्दी</button><button data-l="hn">Hinglish</button></div><div class="tabs" id="sclens"><button data-n="short">Short · 1 min</button><button data-n="std" class="on">Standard · 3 min</button><button data-n="deep">Deep · 6 min</button></div><textarea id="sbox" spellcheck="false"></textarea><div class="sca"><button class="chip" id="scc">Copy</button><button class="chip" id="scd">Download .txt</button><button class="chip" id="scl">🔊 Listen</button><button class="chip" id="srw">↻ Rewrite</button><span id="scm"></span></div></div>';
+async function openSc(title){const m=$('scm2');m.classList.add('on');$('sbox').value='Writing your script…';$('scm').textContent='';
+  try{const raw=await raw6(title),all=parse(raw,0),sc=e=>(e.list?2:0)+(CAUSE.test(e.t)?2:0)+(e.t.length>60&&e.t.length<230?1:0);
+    const ev=all.filter(e=>!e.f).sort((a,b)=>sc(b)-sc(a)).slice(0,9).sort((a,b)=>a.y-b.y),dg=digest(raw,title);
+    const why=(raw.replace(/\([^)]*\)/g,'').match(/[^.!?\n]+[.!?]+/g)||[]).map(s=>s.trim()).filter(s=>CAUSE.test(s)&&s.length>50&&s.length<300).slice(0,3);
+    SD={title,desc:((document.querySelector('#panel .ds')||{}).textContent||'').trim(),sum:dg.top,ev,why,terms:dg.terms,fut:all.filter(e=>e.f).map(e=>e.t),hi:{sum:[],ev:[]}};
+    try{const ll=await get(W+'action=query&prop=langlinks&lllang=hi&redirects=1&titles='+enc(title)),lk=(Object.values(ll.query.pages)[0].langlinks||[])[0];
+      if(lk){const h=await get('https://hi.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&explaintext=1&redirects=1&titles='+enc(lk['*']||lk.title)),ht=((Object.values(h.query.pages)[0]||{}).extract||'').replace(/।/g,'. ');
+        SD.hi.sum=digest(ht,'').top;SD.hi.ev=parse(ht,0).filter(e=>!e.f).sort((a,b)=>a.y-b.y).slice(0,9)}}catch(e){}
+    gen()}catch(e){$('sbox').value='Couldn’t build the script. Check your connection and try again.'}}
+
+$('scm2').addEventListener('click',e=>{const t=e.target;let b;
+  if(t.id==='scm2'||t.closest('#scx')){speechSynthesis.cancel();$('scm2').classList.remove('on')}
+  else if(b=t.closest('#sctabs button')){sLang=b.dataset.l;$('sctabs').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));SD&&gen()}
+  else if(b=t.closest('#sclens button')){sLen=b.dataset.n;$('sclens').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));SD&&gen()}
+  else if(t.closest('#srw'))SD&&gen();
+  else if(t.closest('#scc')){navigator.clipboard.writeText($('sbox').value).then(()=>$('scc').textContent='Copied ✓').catch(()=>{$('sbox').select()})}
+  else if(t.closest('#scd')){dl(new Blob([$('sbox').value],{type:'text/plain'}),(SD?SD.title:'script').replace(/\W+/g,'-')+'-'+sLang+'.txt')}
+  else if(t.closest('#scl')){if(speechSynthesis.speaking){speechSynthesis.cancel();return}const u=new SpeechSynthesisUtterance($('sbox').value.replace(/\[[^\]]+\]/g,''));u.lang={en:'en-US',hi:'hi-IN',hn:'hi-IN'}[sLang];speechSynthesis.speak(u)}});
+
+/* panel upgrades */
+const _dp3=drawPanel;drawPanel=function(sm,d,title){_dp3(sm,d,title);const ac=panel.querySelector('.ac');
+  ac.insertAdjacentHTML('beforebegin',`<h3>Ask Orbit</h3><form class="ask" id="af"><input id="ai" placeholder="Ask anything about ${esc(title)}…" autocomplete="off" enterkeyhint="send"><button class="abtn" aria-label="Ask">→</button></form><div class="tl" id="ao"></div>`);
+  ac.insertAdjacentHTML('afterbegin','<button class="chip" id="rdo" type="button">Read full ▤</button><button class="chip" id="scw" type="button">✍ Creator script</button><button class="chip" id="lsn" type="button">🔊 Listen</button>');
+  $('af').onsubmit=async e=>{e.preventDefault();const v=$('ai').value.trim();if(!v)return;$('ao').textContent='Searching the article…';let a='';try{a=await answer(title,v)}catch(x){}
+    $('ao').innerHTML=a?words6(a):'I couldn’t find that in this article. Try “Read full” or rephrase.'};
+  $('rdo').onclick=()=>openRd(title);$('scw').onclick=()=>openSc(title);
+  $('lsn').onclick=()=>{if(speechSynthesis.speaking){speechSynthesis.cancel();return}const u=new SpeechSynthesisUtterance(title+'. '+((panel.querySelector('.tl')||{}).textContent||''));u.lang='en-US';speechSynthesis.speak(u)}};
+function snap(s){const H=panel.offsetHeight,y={peek:H-200,half:H*.46,full:0}[s];panel.dataset.s=s;panel.style.transition='transform .55s cubic-bezier(.2,1,.3,1)';panel.style.setProperty('--sy',y+'px');panel.style.overflowY=s==='full'?'auto':'hidden';moreB.hidden=!(MOB&&s!=='full')}
+moreB.addEventListener('click',()=>snap('full'));
+addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('scm2').classList.contains('on')){e.stopImmediatePropagation();$('scm2').classList.remove('on')}else if(rd.classList.contains('on')){e.stopImmediatePropagation();rd.classList.remove('on')}},true);
+
+/* logo + favicon */
+const LOGO='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#8e8e93"/></linearGradient></defs><rect width="512" height="512" rx="115" fill="#000"/><ellipse cx="256" cy="256" rx="170" ry="68" fill="none" stroke="url(#g)" stroke-width="14" transform="rotate(-24 256 256)"/><circle cx="256" cy="256" r="74" fill="url(#g)"/><circle cx="398" cy="196" r="22" fill="#fff"/></svg>';
+const dl=(b,n)=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),3000)};
+document.head.insertAdjacentHTML('beforeend','<link rel="icon" href="data:image/svg+xml,'+encodeURIComponent(LOGO)+'">');
+$('lgs').onclick=()=>dl(new Blob([LOGO],{type:'image/svg+xml'}),'orbit-logo.svg');
+$('lgp').onclick=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=1024;c.getContext('2d').drawImage(im,0,0,1024,1024);c.toBlob(b=>b&&dl(b,'orbit-logo.png'))};im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(LOGO)};
 </script>
 </body></html>
