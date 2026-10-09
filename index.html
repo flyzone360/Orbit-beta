@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>Orbit</title>
 <meta name="theme-color" content="#000000"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
@@ -226,6 +226,46 @@ html.mob body:not(.dive) .bar{margin-top:auto}
 html.mob .sg .chip{animation:none}
 .kh{margin-top:18px;font-size:12px;color:var(--ink2);text-align:center}.kh kbd{padding:2px 7px;border-radius:7px;border:1px solid var(--edge);background:var(--glass);font:inherit;font-size:11px}body.dive .kh{display:none}
 @media(hover:hover) and (pointer:fine){body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(540px circle at var(--mx,50%) var(--my,35%),rgba(255,255,255,.07),transparent 65%)}}
+/* v11 */
+#toast{position:fixed;left:50%;top:calc(76px + env(safe-area-inset-top,0px));translate:-50% -10px;z-index:200;padding:11px 20px;border-radius:20px;font-size:14px;opacity:0;pointer-events:none;transition:.4s cubic-bezier(.2,1,.3,1);max-width:90vw;text-align:center}#toast.on{opacity:1;translate:-50% 0}#toast:empty{display:none}
+#aib{right:max(68px,env(safe-area-inset-right))}
+.exr{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 4px}.exr button{padding:8px 13px;border-radius:15px;font-size:13px;font-weight:600;background:var(--glass);border:1px solid var(--edge);color:var(--ink)}
+#sq{margin:8px 0 12px}#sq .chip{font-size:13px;padding:7px 13px}
+.think{color:var(--ink2);animation:blink 1.4s steps(2) infinite}.src{display:block;margin-top:10px;font-size:12px;color:var(--ink2)}
+.aif{display:block;width:100%;margin-top:6px;height:42px;border-radius:14px;border:1px solid var(--edge);background:var(--glass);color:var(--ink);padding:0 14px;font:inherit;outline:0;user-select:text;-webkit-user-select:text}
+#aim .scb,#qzm .scb{max-width:520px}.qzo{display:grid;gap:8px}.qzo button{padding:14px;border-radius:16px;font-size:17px;font-weight:600;background:var(--glass);border:1px solid var(--edge);color:var(--ink);transition:.3s}.qzo button.ok{background:#1f8f4e;color:#fff}.qzo button.no{background:#b3261e;color:#fff}
+.rdn{margin-bottom:18px;padding:10px 16px;border-radius:14px;background:var(--glass);border:1px solid var(--edge);font-size:13px;color:var(--ink2)}
+body.dive #aib{right:max(68px,env(safe-area-inset-right))}
+/* v12 */
+html,body{position:fixed;inset:0;width:100%;overflow:hidden;overscroll-behavior:none}
+#oai{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s}#oai.on{opacity:1;visibility:visible;transition:opacity .35s}
+.oai-c{width:min(460px,100%);border-radius:30px;padding:22px;background:var(--bg);transform:translateY(24px) scale(.96);transition:transform .6s cubic-bezier(.2,1.2,.3,1)}#oai.on .oai-c{transform:none}
+.oai-h{display:flex;align-items:center;gap:12px}.oai-h b{font-size:18px}.oai-h small{color:var(--ink2);font-size:12px;flex:1}.oai-h button{font-size:18px;color:var(--ink2)}
+.orb{flex:none;width:34px;height:34px;border-radius:50%;background:conic-gradient(from 0deg,#fff,#6ea8ff,#bf5af2,#ff6b8a,#fff);animation:spin 3s linear infinite;box-shadow:0 0 24px rgba(160,120,255,.6)}
+.oai-t{margin:16px 0 8px;font-size:19px;font-weight:600;line-height:1.35;min-height:26px}
+.oai-s{list-style:none;padding:0;display:grid;gap:8px;margin:10px 0}.oai-s li{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--ink2);animation:rise .4s backwards}
+.oai-s i{flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:11px;border:1.5px solid var(--edge)}
+.oai-s li.run i{border-top-color:var(--ink);animation:spin .8s linear infinite}.oai-s li.ok i{background:var(--ink);color:var(--bg);border-color:transparent}.oai-s li.no i{background:#b3261e;color:#fff;border-color:transparent}
+.oai-card{display:flex;gap:14px;align-items:center;padding:14px;border-radius:20px;background:var(--glass);border:1px solid var(--edge);margin-top:12px;animation:rise .5s backwards}
+.oai-card .im{flex:none;width:56px;height:56px;border-radius:50%}.oai-card b{display:block;font-size:17px}.oai-card small{color:var(--ink2);font-size:13px;display:block;margin-top:3px}
+.oai-bar{height:3px;border-radius:2px;background:var(--edge);margin-top:12px;overflow:hidden}.oai-bar i{display:block;height:100%;width:0;background:var(--ink);animation:fill 3.3s linear forwards}@keyframes fill{to{width:100%}}
+.oai-b{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+/* v13 */
+.oai-think{display:grid;place-items:center;gap:14px;padding:20px 0 8px}
+.tk{position:relative;width:120px;height:120px;display:grid;place-items:center}
+.tk .kc{width:46px;height:46px;border-radius:50%;background:conic-gradient(from 0deg,#fff,#6ea8ff,#bf5af2,#ff6b8a,#fff);animation:spin 2.2s linear infinite;box-shadow:0 0 36px rgba(160,120,255,.75)}
+.tk i{position:absolute;inset:6px;border-radius:50%;border:1px solid var(--edge);animation:ripple 2.4s ease-out infinite}.tk i:nth-child(2){animation-delay:.8s}.tk i:nth-child(3){animation-delay:1.6s}
+@keyframes ripple{from{transform:scale(.4);opacity:.9}to{transform:scale(1.15);opacity:0}}
+.tk b{position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px;border-radius:50%;background:var(--ink);box-shadow:0 0 12px var(--ink);animation:odot 2.6s linear infinite}
+@keyframes odot{from{transform:rotate(0) translateX(var(--r,46px))}to{transform:rotate(360deg) translateX(var(--r,46px))}}
+.tkt{font-size:15px;font-weight:600;background:linear-gradient(90deg,var(--ink2) 30%,var(--ink) 50%,var(--ink2) 70%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 2s linear infinite}
+.aist{flex:1;margin-left:10px;font-size:12px;color:var(--ink2)}
+.cht{display:flex;flex-direction:column;gap:8px;max-height:44vh;overflow:auto;padding:6px 0}
+.bb{max-width:88%;padding:10px 14px;border-radius:18px;font-size:15px;line-height:1.45;animation:rise .35s backwards;white-space:pre-wrap;user-select:text;-webkit-user-select:text}
+.bb.bot{align-self:flex-start;background:var(--glass);border:1px solid var(--edge)}.bb.user{align-self:flex-end;background:var(--ink);color:var(--bg)}
+.bch{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.dots i{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:var(--ink2);animation:bounce 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}@keyframes bounce{50%{transform:translateY(-5px);opacity:.4}}
+#chf{margin-top:8px;display:none}#aim.ready #chf{display:flex}#chf input{flex:1;min-width:0;height:44px;border-radius:22px;border:1px solid var(--edge);background:var(--glass);color:var(--ink);padding:0 16px;font:inherit;font-size:16px;outline:0;user-select:text;-webkit-user-select:text}
 </style></head>
 <body>
 <div id="spl"><div class="sw"><div id="sn">Orbit</div><div class="sb"><i id="sbar"></i></div><p id="sp"><b id="spc">0</b>%</p></div></div>
@@ -889,7 +929,7 @@ const _or2=openRd;openRd=async function(t){await _or2(t);igInit(rd)};
 /* ===== v10 ===== */
 const WDX={};
 async function wdFind(q){let s=[];
-  try{s=(await get('https://www.wikidata.org/w/api.php?format=json&origin=*&action=wbsearchentities&language=en&uselang=en&limit=7&search='+enc(q))).search||[]}catch(e){}
+  try{s=(await get('https://www.wikidata.org/w/api.php?format=json&origin=*&action=wbsearchentities&language='+qlang(q)+'&uselang='+qlang(q)+'&limit=7&search='+enc(q))).search||[]}catch(e){}
   s=s.filter(x=>x.label).map(x=>({...x,sc:Math.max(sim6(q,x.label),sim6(q,(x.match||{}).text||''))})).sort((a,b)=>b.sc-a.sc);
   s.forEach(x=>{WDX[x.label]=Object.assign(WDX[x.label]||{},{ent:x,desc:x.description||''})});
   return{hit:s[0]&&s[0].sc>=.6?s[0]:null,cands:s.slice(0,4).map(x=>x.label)}}
@@ -932,6 +972,232 @@ if(MOB)ST.length=Math.min(ST.length,60);
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){let raf=0;
   addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;document.body.style.setProperty('--mx',e.clientX+'px');document.body.style.setProperty('--my',e.clientY+'px')})});
   document.querySelector('.sg').insertAdjacentHTML('afterend','<div class="kh">Press <kbd>/</kbd> to search · <kbd>Esc</kbd> to go back · <kbd>←</kbd> <kbd>→</kbd> in the timeline</div>')}
+
+
+/* ===== v11: Orbit AI ===== */
+const LNAME={en:'English',hi:'Hindi',mr:'Marathi',bn:'Bengali',te:'Telugu',ta:'Tamil',hn:'Hinglish (Hindi written in English letters, casual Gen-Z tone)'};
+const AIK={g:'',q:''};try{Object.assign(AIK,JSON.parse(localStorage.getItem('orbit_ai')||'{}'))}catch(e){}
+let AIS='Built-in';
+const toast=(m,ms=2600)=>{let t=$('toast');if(!t){document.body.insertAdjacentHTML('beforeend','<div id="toast" class="gl"></div>');t=$('toast')}t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),ms)};
+async function post(url,headers,body,ms=25000){const c=new AbortController(),t=setTimeout(()=>c.abort(),ms);try{const r=await fetch(url,{method:'POST',headers:Object.assign({'Content-Type':'application/json'},headers),body:JSON.stringify(body),signal:c.signal});if(!r.ok)throw 0;return await r.json()}finally{clearTimeout(t)}}
+async function ai(sys,user,max=500){
+  const msgs=[{role:'system',content:sys},{role:'user',content:user}],T=[];
+  if(AIK.g)T.push(['Gemini',async()=>{const j=await post('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+encodeURIComponent(AIK.g),{},{systemInstruction:{parts:[{text:sys}]},contents:[{role:'user',parts:[{text:user}]}],generationConfig:{temperature:.4,maxOutputTokens:max}});return j.candidates[0].content.parts.map(p=>p.text).join('')}]);
+  if(AIK.q)T.push(['Groq',async()=>(await post('https://api.groq.com/openai/v1/chat/completions',{Authorization:'Bearer '+AIK.q},{model:'llama-3.1-8b-instant',messages:msgs,max_tokens:max,temperature:.4})).choices[0].message.content]);
+  T.push(['Free AI',async()=>(await post('https://text.pollinations.ai/openai',{},{model:'openai',messages:msgs,max_tokens:max,temperature:.4})).choices[0].message.content]);
+  for(const [n,f] of T){try{const o=await f();if(o&&o.trim()){AIS=n;return o.trim()}}catch(e){}}
+  AIS='Built-in';return null}
+
+/* understand natural language: "the guy who invented the phone" -> Telephone */
+const looksNL=t=>t.trim().split(/\s+/).length>=4||/\?/.test(t);
+const qlang=t=>/[\u0900-\u097F]/.test(t)?'hi':/[\u0980-\u09FF]/.test(t)?'bn':/[\u0B80-\u0BFF]/.test(t)?'ta':/[\u0C00-\u0C7F]/.test(t)?'te':'en';
+async function smartTitles(t){const a=await ai('You map a user request (any language, any phrasing) to the most relevant English Wikipedia article titles. Reply ONLY with JSON like {"titles":["Best title","Second best","Third best"]}. Use exact Wikipedia titles.',t,120);
+  if(!a)return null;try{return JSON.parse(a.match(/\{[\s\S]*\}/)[0]).titles.filter(x=>typeof x==='string').slice(0,3)}catch(e){return null}}
+const _dv3=dive;
+dive=async function(t,x){
+  if(!t||x||WDX[t]||!(looksNL(t)))return _dv3(t,x);
+  toast('🧠 Understanding what you mean…',9000);const ts=await smartTitles(t);
+  if(ts&&ts.length)for(const c of ts){const r=await resolve(c).catch(()=>({}));if(r.best){toast('Opening “'+r.best+'”');return _dv3(r.best,true)}}
+  toast('',1);return _dv3(t,x)};
+
+/* smart answers: retrieve from Wikipedia, then let AI write; never a dead end */
+const SK=new Set('what when where which why how does did tell about was who are is the and for with from that this explain give'.split(' '));
+function passages(raw,qq,n){const S=(raw.replace(/\n=+[^\n]+=+\n/g,'\n').replace(/\([^)]*\)/g,'').match(/[^.!?\n]+[.!?]+/g)||[]).map(s=>s.trim()).filter(s=>s.length>30);
+  const qw=[...new Set((qq.toLowerCase().match(/[\p{L}\p{N}]{3,}/gu)||[]).filter(w=>!STOP.has(w)&&!SK.has(w)))];if(!qw.length)return S.slice(0,n).map(t=>({t,s:0}));
+  return S.map((s,i)=>{const l=s.toLowerCase();let x=0;qw.forEach(k=>{if(l.includes(k))x+=1+Math.min(.5,k.length/20)});return[i,x]}).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,n).sort((a,b)=>a[0]-b[0]).map(([i,x])=>({t:S[i]+(S[i+1]?' '+S[i+1]:''),s:x}))}
+const showAns=(a,note)=>{const o=$('ao');o.innerHTML=words6(a)+`<span class="src">${note}</span>`};
+async function askOrbit(title,qq){
+  const o=$('ao');o.innerHTML='<span class="think">Thinking…</span>';let qe=qq;
+  if(/[^\x00-\x7F]/.test(qq)){const m=await mt1(qq,'en',0).catch(()=>null);if(m)qe=m.t}
+  const raw=await raw6(title).catch(()=>'');let P=passages(raw,qe,4).map(p=>({...p,src:title})),side=[];
+  if(!P.length||P[0].s<2){try{const s=await get(W+'action=query&generator=search&gsrnamespace=0&gsrlimit=4&prop=extracts&exintro=1&explaintext=1&exlimit=max&gsrsearch='+enc(qe+' '+title));
+    Object.values(s.query.pages).sort((a,b)=>a.index-b.index).forEach(p=>{side.push(p.title);P=P.concat(passages(p.extract||'',qe,2).map(x=>({...x,src:p.title})))})}catch(e){}}
+  const ctx=P.slice(0,6).map((p,i)=>`[${i+1}] (${p.src}) ${p.t}`).join('\n'),L=LNAME[LANG];
+  const a=ctx?await ai(`You are Orbit, a friendly expert. Answer the question using ONLY the numbered sources. If they only partly cover it, say what is known and what is unclear. 3-6 clear human sentences, cite like [1]. Reply in ${L}.`,`Topic: ${title}\nQuestion: ${qq}\n\nSources:\n${ctx}`,450)
+    :await ai(`You are Orbit, a friendly expert. Answer in 3-5 sentences in ${L}. Start with "Not from Wikipedia:" because no sources were found, and say if you are unsure.`,`Topic: ${title}\nQuestion: ${qq}`,350);
+  if(a)return showAns(a,`✦ ${AIS}${ctx?' · from Wikipedia: '+[...new Set(P.slice(0,6).map(p=>p.src))].join(', '):' · general knowledge, please verify'}`);
+  if(P.length){let t=P.slice(0,2).map(p=>p.t).join(' ');if(LANG!=='en'){const r=await trList([t],LANG==='hn'?'hi':LANG,LANG==='hn');t=r.out[0]}
+    return showAns(t,'Orbit AI is resting, so these are the closest passages.')}
+  const more=side.length?side.map(x=>`<button class="chip" data-t="${esc(x)}">${esc(x)}</button>`).join(''):'';
+  o.innerHTML=`<span class="think">No direct answer in the article, but you can still:</span><div class="ch" style="margin-top:10px"><a class="chip" target="_blank" rel="noopener" href="https://www.google.com/search?q=${enc(qq+' '+title)}">Search the web ↗</a><button class="chip" data-t="${esc(qq)}">Search “${esc(qq.slice(0,24))}”</button>${more}</div>`}
+async function explain(title,m){
+  if(m==='quiz')return quiz(title);const o=$('ao');o.innerHTML='<span class="think">Thinking…</span>';
+  const raw=await raw6(title).catch(()=>''),sty={simple:'Explain it like I am 10 years old, with one everyday analogy. 4-6 sentences.',deep:'Give a clear expert deep dive: background, how it works, impact, debates. 8-12 sentences.',fun:'Explain it as a fun, witty story with one surprising fact. 5-7 sentences.'}[m];
+  const a=await ai(`You are Orbit, a brilliant explainer. Use only the source text for facts. ${sty} Write in ${LNAME[LANG]}.`,`Topic: ${title}\n\nSource:\n${raw.slice(0,5000)}`,700);
+  if(a)return showAns(a,'✦ '+AIS+' · based on Wikipedia');
+  const d=digest(raw,title);let t=d.top.slice(0,m==='simple'?2:4).join(' ');if(LANG!=='en'){const r=await trList([t],LANG==='hn'?'hi':LANG,LANG==='hn');t=r.out[0]}
+  showAns(t||'No text available.','Orbit AI is resting, so this is a built-in summary.')}
+function quiz(title){
+  raw6(title).then(raw=>{const E=parse(raw,0).filter(e=>!e.f&&/^\d{3,4}$/.test(e.l)),Q=[...E].sort(()=>Math.random()-.5).slice(0,5).map(e=>{const y=+e.l,o=new Set([y]);while(o.size<4)o.add(y+Math.round((Math.random()*2-1)*Math.max(8,y*.03)));return{q:e.t.replace(/\b\d{3,4}\b/,'____'),a:y,o:[...o].sort(()=>Math.random()-.5)}});
+    if(Q.length<2){$('ao').textContent='Not enough dated facts for a quiz on this topic yet.';return}
+    let i=0,sc=0;const m=$('qzm'),draw=()=>{if(i>=Q.length){m.querySelector('.scb').innerHTML=`<div class="sch"><b>🎯 ${esc(title)}</b><button id="qzx">✕</button></div><h2 style="margin:10px 0">${sc} / ${Q.length}</h2><p>${sc===Q.length?'Perfect. You know your history.':sc>=Q.length/2?'Nice, you know this one.':'Time to dive deeper.'}</p>`;return}
+      const q=Q[i];m.querySelector('.scb').innerHTML=`<div class="sch"><b>🎯 Question ${i+1} of ${Q.length}</b><button id="qzx">✕</button></div><p style="font-size:18px;line-height:1.5;margin:10px 0 16px">In which year: ${esc(q.q)}</p><div class="qzo">${q.o.map(y=>`<button data-y="${y}">${fmt(y)}</button>`).join('')}</div>`;
+      m.querySelectorAll('.qzo button').forEach(b=>b.onclick=()=>{const ok=+b.dataset.y===q.a;if(ok)sc++;m.querySelectorAll('.qzo button').forEach(x=>{x.disabled=true;if(+x.dataset.y===q.a)x.classList.add('ok')});if(!ok)b.classList.add('no');setTimeout(()=>{i++;draw()},1100)})};
+    m.classList.add('on');draw()})}
+document.body.insertAdjacentHTML('beforeend','<div class="scm" id="qzm"><div class="scb gl"></div></div><div class="scm" id="aim"><div class="scb gl"><div class="sch"><b>✦ Orbit AI</b><button id="aix">✕</button></div><p class="dp">Orbit AI works free out of the box. For stronger and faster answers, paste a free key. Keys stay in this browser only.</p><label class="dp">Google Gemini key (aistudio.google.com/apikey)<input id="aik1" class="aif" type="password" autocomplete="off"></label><label class="dp">Groq key (console.groq.com/keys)<input id="aik2" class="aif" type="password" autocomplete="off"></label><div class="sca"><button class="chip" id="aisv">Save</button><button class="chip" id="aits">Test AI</button><span id="aimsg"></span></div></div></div><button class="cb gl" id="aib" aria-label="Orbit AI"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></button>');
+$('aik1').value=AIK.g;$('aik2').value=AIK.q;
+$('aib').onclick=()=>$('aim').classList.add('on');
+document.addEventListener('click',e=>{const t=e.target;if(t.closest('#aix')||t.id==='aim')$('aim').classList.remove('on');if(t.closest('#qzx')||t.id==='qzm')$('qzm').classList.remove('on');
+  if(t.closest('#aisv')){AIK.g=$('aik1').value.trim();AIK.q=$('aik2').value.trim();try{localStorage.setItem('orbit_ai',JSON.stringify(AIK))}catch(x){}$('aimsg').textContent='Saved ✓'}
+  if(t.closest('#aits')){$('aimsg').textContent='Testing…';ai('Reply with one short friendly sentence.','Say hello from Orbit.',40).then(a=>$('aimsg').textContent=a?'✓ '+AIS+': '+a.slice(0,70):'No AI reachable. Orbit falls back to built-in search.')}});
+
+/* panel: explain buttons, suggested questions, smart ask */
+const SQ=['When did it start?','Why was it created?','Who was behind it?','What is its impact today?','What comes next?'];
+const _dp6=drawPanel;
+drawPanel=function(sm,d,title){_dp6(sm,d,title);
+  $('af').insertAdjacentHTML('beforebegin','<div class="exr"><button data-m="simple">🧒 Explain simply</button><button data-m="deep">🎓 Go deeper</button><button data-m="fun">😄 Make it fun</button><button data-m="quiz">🎯 Quiz me</button></div><div class="ch" id="sq">'+SQ.map((q,i)=>`<button class="chip" data-i="${i}">${q}</button>`).join('')+'</div>');
+  $('af').onsubmit=e=>{e.preventDefault();const v=$('ai').value.trim();if(v)askOrbit(title,v)};
+  $('ai').placeholder='Ask anything, in any language…';
+  if(LANG!=='en')trList(SQ,LANG==='hn'?'hi':LANG,LANG==='hn').then(r=>{if(cur6===title)panel.querySelectorAll('#sq .chip').forEach((b,i)=>b.textContent=r.out[i])})};
+panel.addEventListener('click',e=>{const b=e.target.closest('.exr button');if(b)explain(cur6,b.dataset.m);const c=e.target.closest('#sq .chip');if(c){const q=c.textContent;$('ai').value=q;askOrbit(cur6,SQ[+c.dataset.i]||q)}});
+
+/* reader in the language you picked */
+let rdTok=0;
+function rdHtml(title,t){let toc='',b='',skip=false,n=0;t.split('\n').forEach(l=>{const h=l.match(/^(=+)\s*(.+?)\s*=+$/);if(h){skip=/^(references|external links|see also|notes|further reading|bibliography|citations|संदर्भ|बाहरी कड़ियाँ)$/i.test(h[2]);if(skip)return;const lv=Math.min(4,h[1].length+1);toc+=`<button class="chip gl" data-id="r${n}">${esc(h[2])}</button>`;b+=`<h${lv} id="r${n++}">${esc(h[2])}</h${lv}>`}else if(!skip&&l.trim())b+=`<p>${esc(l)}</p>`});
+  return `<h1>${esc(title)}</h1><div class="ch" style="margin-bottom:26px">${toc}</div>${b}`}
+const _or3=openRd;
+openRd=async function(t){const my=++rdTok;await _or3(t);if(LANG==='en'||my!==rdTok)return;
+  const box=rd.querySelector('.rdi');if(!box||!box.querySelector('h1'))return;const L=LANG==='hn'?'hi':LANG,rm=LANG==='hn';
+  box.insertAdjacentHTML('afterbegin',`<div class="rdn" id="rdn">Translating into ${esc(LNAME[LANG].split(' ')[0])}…</div>`);const say=x=>{const n=$('rdn');if(n)n.textContent=x};
+  if(!rm){try{const ll=await get(W+'action=query&prop=langlinks&lllang='+L+'&redirects=1&titles='+enc(t)),lk=(Object.values(ll.query.pages)[0].langlinks||[])[0];
+    if(lk){const r=await get('https://'+L+'.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&explaintext=1&redirects=1&titles='+enc(lk['*']||lk.title)),x=(Object.values(r.query.pages)[0]||{}).extract||'';
+      if(x.length>800&&my===rdTok){const ig=box.querySelector('.igb');box.innerHTML=rdHtml(lk['*']||lk.title,x)+'<p><a class="chip gl" target="_blank" rel="noopener" href="https://'+L+'.wikipedia.org/wiki/'+enc((lk['*']||lk.title).replace(/ /g,'_'))+'">Source: '+L.toUpperCase()+' Wikipedia ↗</a></p>';if(ig)box.appendChild(ig);return}}}catch(e){}}
+  const els=[...box.querySelectorAll('p,h2,h3,h4')].filter(e=>!e.closest('.igb'));els.forEach(e=>e._o=e.textContent);let q=[],busy=0,bad=0;
+  const pump=async()=>{if(busy)return;busy=1;while(q.length&&my===rdTok){const bt=q.splice(0,4),r=await trList(bt.map(e=>e._o),L,rm,(j,x)=>{if(my===rdTok)bt[j].textContent=x});bad+=r.fail}busy=0;if(my===rdTok)say(bad?'Some lines stayed in English (translation service busy).':'Translated as you read · Google Translate')};
+  const io=new IntersectionObserver(es=>es.forEach(n=>{if(n.isIntersecting){io.unobserve(n.target);q.push(n.target);pump()}}),{root:rd,rootMargin:'900px 0px'});els.forEach(e=>io.observe(e))};
+
+
+/* ===== v12: Orbit AI popup, keyless only, keyboard/viewport fixes ===== */
+(()=>{const f=HTMLElement.prototype.focus;HTMLElement.prototype.focus=function(o){return f.call(this,Object.assign({preventScroll:true},o||{}))}})();
+q.addEventListener('blur',()=>setTimeout(()=>scrollTo(0,0),60));q.addEventListener('focus',()=>{scrollTo(0,0);ty.style.left=-Math.max(0,ty.offsetWidth-fld.clientWidth+8)+'px'});
+if(window.visualViewport)visualViewport.addEventListener('resize',()=>{scrollTo(0,0)});
+new ResizeObserver(()=>{ty.style.left=-Math.max(0,ty.offsetWidth-fld.clientWidth+8)+'px'}).observe(fld);
+barEl.addEventListener('pointerup',e=>{if(!e.target.closest('button'))q.focus()});
+
+/* free AI only: no keys anywhere */
+AIK.g=AIK.q='';try{localStorage.removeItem('orbit_ai')}catch(e){}
+async function ai(sys,user,max=500){
+  const msgs=[{role:'system',content:sys},{role:'user',content:user}];
+  const T=[async()=>(await post('https://text.pollinations.ai/openai',{},{model:'openai',messages:msgs,max_tokens:max,temperature:.4})).choices[0].message.content,
+    async()=>{const c=new AbortController(),tm=setTimeout(()=>c.abort(),25000);try{const r=await fetch('https://text.pollinations.ai/'+enc((sys+'\n\n'+user).slice(0,1200))+'?model=openai',{signal:c.signal});if(!r.ok)throw 0;return await r.text()}finally{clearTimeout(tm)}}];
+  for(const f of T){try{const o=await f();if(o&&o.trim()&&!/^\s*\{\s*"error"/i.test(o)){AIS='Free AI';return o.trim()}}catch(e){}}
+  AIS='Built-in';return null}
+$('aim').querySelector('.scb').innerHTML='<div class="sch"><b>✦ Orbit AI</b><button id="aix">✕</button></div><p class="dp">Orbit AI is free and needs no key. It understands what you describe, explains topics and answers questions from Wikipedia. If the free service is busy, Orbit switches to its built-in search automatically.</p><div class="sca"><button class="chip" id="aits">Test Orbit AI</button><span id="aimsg"></span></div>';
+
+/* the Orbit AI popup: shows every step so you always know what happened */
+let oaTok=0,oaTimer=0;
+const oai=document.createElement('div');oai.id='oai';
+oai.innerHTML='<div class="oai-c gl"><div class="oai-h"><i class="orb"></i><b>Orbit AI</b><small>your smart guide</small><button id="oax" aria-label="Close">✕</button></div><p class="oai-t" id="oat"></p><ul class="oai-s" id="oas"></ul><div id="oab"></div></div>';
+document.body.appendChild(oai);
+const oaClose=()=>{oaTok++;clearTimeout(oaTimer);oai.classList.remove('on')};
+const typeTo=(el,t,sp=15)=>new Promise(r=>{let i=0;const id=setInterval(()=>{el.textContent=t.slice(0,++i);if(i>=t.length){clearInterval(id);r()}},sp)});
+function oaStep(t){const li=document.createElement('li');li.className='run';li.innerHTML='<i></i><span></span>';li.lastChild.textContent=t;$('oas').appendChild(li);
+  return{ok:s=>{li.className='ok';li.firstChild.textContent='✓';if(s)li.lastChild.textContent=s},no:s=>{li.className='no';li.firstChild.textContent='✕';if(s)li.lastChild.textContent=s}}}
+function oaAlts(t,list){$('oab').innerHTML='<div class="oai-b">'+[...new Set(list)].slice(0,6).map(c=>`<button class="chip gl" data-t="${esc(c)}">${esc(c)}</button>`).join('')+`<button class="chip gl" data-t="📰 ${esc(t)}">📰 News for “${esc(t.slice(0,24))}”</button><a class="chip gl" target="_blank" rel="noopener" href="https://www.google.com/search?q=${enc(t)}">Search the web ↗</a></div>`}
+async function orbitAIFlow(t,cands){
+  const my=++oaTok,live=()=>my===oaTok;clearTimeout(oaTimer);oai.classList.add('on');$('oas').innerHTML='';$('oab').innerHTML='';oai._q=t;oai._cands=cands||[];oai._alts=[];oai._go=null;
+  await typeTo($('oat'),'Hello, this is Orbit AI 👋');if(!live())return;
+  const s1=oaStep('You typed “'+t+'”. Looking for a matching Wikipedia page…');await sleep(600);if(!live())return;
+  s1.no('No page is called “'+t+'”, so I am taking over.');
+  await typeTo($('oat'),'I’m understanding what you wanna talk about…');if(!live())return;
+  const s2=oaStep('Asking Orbit AI (free) what you mean…'),ts=await smartTitles(t);if(!live())return;
+  let best=null;const alts=[];
+  if(ts)for(const c of ts){const r=await resolve(c).catch(()=>({}));if(!live())return;if(r.best){if(!best)best=r.best;else if(r.best!==best)alts.push(r.best)}}
+  oai._alts=alts;
+  if(best){s2.ok('Orbit AI understood: “'+best+'”');await typeTo($('oat'),'Oh yeah, here it is! 🎯');if(!live())return;
+    let sm={};try{sm=await get('https://en.wikipedia.org/api/rest_v1/page/summary/'+enc(best.replace(/ /g,'_')))}catch(e){}if(!live())return;
+    const u=sm.thumbnail&&sm.thumbnail.source;
+    $('oab').innerHTML=`<div class="oai-card"><span class="im"${u?` style="background-image:url('${esc(u)}')"`:''}>${u?'':esc(best[0])}</span><div><b>${esc(best)}</b><small>${esc(sm.description||'Opening this for you…')}</small></div></div><div class="oai-bar"><i></i></div><div class="oai-b"><button class="chip" id="oago" style="background:var(--ink);color:var(--bg)">Open now</button><button class="chip gl" id="oano">Not this one</button></div>`;
+    const go3=()=>{if(!live())return;oaClose();_dv2(best,true)};oai._go=go3;oaTimer=setTimeout(go3,3300);return}
+  s2.no(ts?'I couldn’t match it to a page':'Orbit AI is busy right now');
+  await typeTo($('oat'),'I couldn’t pin it down, but here is what I can do:');if(!live())return;oaAlts(t,(cands||[]).concat(alts))}
+oai.addEventListener('click',e=>{const t=e.target;let b;
+  if(t.closest('#oax')||t===oai){oaClose();return}
+  if(t.closest('#oago')){clearTimeout(oaTimer);oai._go&&oai._go();return}
+  if(t.closest('#oano')){clearTimeout(oaTimer);$('oat').textContent='No problem. Maybe one of these?';$('oab').innerHTML='';oaAlts(oai._q,oai._alts.concat(oai._cands));return}
+  if(b=t.closest('.chip[data-t]')){const v=b.dataset.t;oaClose();if(v.startsWith('📰 '))newsOnly(v.slice(3));else dive(v,true)}});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&oai.classList.contains('on')){e.stopImmediatePropagation();oaClose()}},true);
+
+/* new front door: exact title -> Wikidata -> Orbit AI popup (also for sentences) */
+const _dv4=dive;
+dive=async function(t,x){
+  if(!t||t==='undefined')return;if(x||(WDX[t]&&WDX[t].ent))return _dv4(t,x);
+  const my=++rTok;barEl.classList.add('busy');let r={best:null,cands:[]},wd={hit:null,cands:[]};
+  try{if(!looksNL(t)){r=await resolve(t);if(my!==rTok)return barEl.classList.remove('busy');if(r.best){barEl.classList.remove('busy');return _dv2(r.best,true)}
+      wd=await wdFind(t);if(my!==rTok)return barEl.classList.remove('busy');if(wd.hit){barEl.classList.remove('busy');return viaWD(t,wd.hit)}}}catch(e){}
+  barEl.classList.remove('busy');return orbitAIFlow(t,[...new Set((r.cands||[]).concat(wd.cands||[]))])};
+
+
+/* ===== v13: self-healing typing overlay, Orbit AI thinking animation, Orbit AI chat ===== */
+const ovText=()=>chars6.map(s=>s.textContent).join('');
+function addCh(ch,anim){const s=document.createElement('span');s.className='c';s.textContent=ch;if(!anim)s.style.animation='none';ty.insertBefore(s,tcar);chars6.push(s)}
+function render7(){
+  const v=q.value;let cur=ovText();lastV=v;
+  if(ty.querySelectorAll('.c').length!==chars6.length){ty.querySelectorAll('.c').forEach(s=>s.remove());chars6.length=0;cur=''}
+  if(v!==cur){
+    if(cur.startsWith(v)){chars6.splice(v.length).forEach(s=>{try{shat(s)}catch(e){}s.remove()})}
+    else if(v.startsWith(cur)){for(let i=cur.length;i<v.length;i++)addCh(v[i],true)}
+    else{ty.querySelectorAll('.c').forEach(s=>s.remove());chars6.length=0;for(const ch of v)addCh(ch,false)}
+  }
+  barEl.style.setProperty('--w',Math.min(900,Math.max(620,260+v.length*13))+'px');
+  ty.style.left=-Math.max(0,ty.offsetWidth-fld.clientWidth+8)+'px'}
+q.removeEventListener('input',render6);q.addEventListener('input',render7);render6=function(){render7()};
+setInterval(()=>{if(ovText()!==q.value||ty.querySelectorAll('.c').length!==chars6.length)render7()},150);
+render7();
+
+/* chat-capable ai(): accepts a string or a list of messages */
+async function ai(sys,user,max=500){
+  const msgs=[{role:'system',content:sys}].concat(Array.isArray(user)?user:[{role:'user',content:user}]);
+  const flat=sys+'\n\n'+msgs.slice(1).map(m=>(m.role==='user'?'User: ':'Orbit: ')+m.content).join('\n');
+  const T=[async()=>(await post('https://text.pollinations.ai/openai',{},{model:'openai',messages:msgs,max_tokens:max,temperature:.5})).choices[0].message.content,
+    async()=>{const c=new AbortController(),tm=setTimeout(()=>c.abort(),25000);try{const r=await fetch('https://text.pollinations.ai/'+enc(flat.slice(-1400))+'?model=openai',{signal:c.signal});if(!r.ok)throw 0;return await r.text()}finally{clearTimeout(tm)}}];
+  for(const f of T){try{const o=await f();if(o&&o.trim()&&!/^\s*\{\s*"error"/i.test(o)){AIS='Orbit AI';return o.trim()}}catch(e){}}
+  AIS='Built-in';return null}
+
+/* the thinking animation */
+function thinking(ph){const b=$('oab');b.innerHTML='<div class="oai-think"><div class="tk"><i></i><i></i><i></i><span class="kc"></span><b></b><b style="--r:34px;animation-duration:3.6s;animation-direction:reverse"></b><b style="--r:56px;animation-duration:4.8s"></b></div><p class="tkt"></p></div>';
+  let i=0;const t=b.querySelector('.tkt');t.textContent=ph[0];const id=setInterval(()=>{if(!document.body.contains(t)||!oai.classList.contains('on')){clearInterval(id);return}t.textContent=ph[++i%ph.length]},1500);
+  return()=>{clearInterval(id);const e=b.querySelector('.oai-think');if(e)e.remove()}}
+async function orbitAIFlow(t,cands){
+  const my=++oaTok,live=()=>my===oaTok;clearTimeout(oaTimer);oai.classList.add('on');$('oas').innerHTML='';$('oab').innerHTML='';oai._q=t;oai._cands=cands||[];oai._alts=[];oai._go=null;
+  await typeTo($('oat'),'Hello'+(UN?' '+UN:'')+', this is Orbit AI 👋');if(!live())return;
+  const s1=oaStep('You typed “'+t+'”. Looking for a matching Wikipedia page…');await sleep(600);if(!live())return;
+  s1.no('No page is called “'+t+'”, so I am taking over.');
+  await typeTo($('oat'),'I’m understanding what you wanna talk about…');if(!live())return;
+  const s2=oaStep('Asking Orbit AI what you mean…'),stop=thinking(['Reading your words…','Searching through Wikipedia…','Connecting the dots…','Almost there…']);
+  const ts=await smartTitles(t);let best=null;const alts=[];
+  if(live()&&ts)for(const c of ts){const r=await resolve(c).catch(()=>({}));if(!live())break;if(r.best){if(!best)best=r.best;else if(r.best!==best)alts.push(r.best)}}
+  stop();if(!live())return;oai._alts=alts;
+  if(best){s2.ok('Orbit AI understood: “'+best+'”');await typeTo($('oat'),'Oh yeah, here it is! 🎯');if(!live())return;
+    let sm={};try{sm=await get('https://en.wikipedia.org/api/rest_v1/page/summary/'+enc(best.replace(/ /g,'_')))}catch(e){}if(!live())return;
+    const u=sm.thumbnail&&sm.thumbnail.source;
+    $('oab').innerHTML=`<div class="oai-card"><span class="im"${u?` style="background-image:url('${esc(u)}')"`:''}>${u?'':esc(best[0])}</span><div><b>${esc(best)}</b><small>${esc(sm.description||'Opening this for you…')}</small></div></div><div class="oai-bar"><i></i></div><div class="oai-b"><button class="chip" id="oago" style="background:var(--ink);color:var(--bg)">Open now</button><button class="chip gl" id="oano">Not this one</button></div>`;
+    const go3=()=>{if(!live())return;oaClose();_dv2(best,true)};oai._go=go3;oaTimer=setTimeout(go3,3300);return}
+  s2.no(ts?'I couldn’t match it to a page':'Orbit AI is resting right now');
+  await typeTo($('oat'),'I couldn’t pin it down, but here is what I can do:');if(!live())return;oaAlts(t,(cands||[]).concat(alts))}
+
+/* the ✦ panel: status check + chat that first asks your name */
+let UN='';try{UN=localStorage.getItem('orbit_name')||''}catch(e){}
+let CH=[],chatBusy=false;
+$('aim').querySelector('.scb').innerHTML='<div class="sch"><b>✦ Orbit AI</b><span class="aist" id="aist">○ not checked</span><button id="aix" aria-label="Close">✕</button></div><div class="sca"><button class="chip" id="aitest">Test Orbit AI</button><span id="aimsg"></span></div><div class="cht" id="cht"></div><form class="ask" id="chf"><input id="chi" placeholder="Type your message…" autocomplete="off" enterkeyhint="send"><button class="abtn" aria-label="Send">→</button></form>';
+function bub(role,text){const d=document.createElement('div');d.className='bb '+role;
+  const ch=[...text.matchAll(/\[\[([^\]]+)\]\]/g)].map(m=>m[1]);d.textContent=text.replace(/\[\[([^\]]+)\]\]/g,'$1');
+  if(ch.length){const c=document.createElement('div');c.className='bch';ch.slice(0,3).forEach(t=>{const b=document.createElement('button');b.className='chip gl';b.dataset.t=t;b.textContent='Open '+t+' ↗';c.appendChild(b)});d.appendChild(c)}
+  $('cht').appendChild(d);$('cht').scrollTop=1e6;return d}
+async function sendChat(text){
+  text=text.trim();if(!text||chatBusy)return;bub('user',text);$('chi').value='';
+  if(!UN){UN=text.replace(/^(my name is|i am|i'm|mera naam|main)\s+/i,'').replace(/[^\p{L}\p{N} ._-]/gu,'').trim().split(/\s+/).slice(0,2).join(' ').slice(0,24)||'friend';
+    try{localStorage.setItem('orbit_name',UN)}catch(e){}bub('bot',`Nice to meet you, ${UN}! 🙌 Ask me anything, or tell me what you're curious about and I'll point you to the right page.`);return}
+  chatBusy=true;const d=bub('bot','');d.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';CH.push({role:'user',content:text});CH=CH.slice(-10);
+  const a=await ai(`You are Orbit AI, the warm, quick-witted guide inside the Orbit knowledge app. The user's name is ${UN}. Reply in the same language and style the user writes in (English, Hindi, Hinglish...). Keep it short and human, 2-5 sentences. When you mention a topic worth exploring, wrap its Wikipedia title in [[double brackets]], like [[Black hole]]. If unsure, say so honestly.`,CH,400);
+  chatBusy=false;d.remove();if(a){CH.push({role:'assistant',content:a});bub('bot',a)}else bub('bot','I lost my connection for a second. Try again in a moment? 🙏')}
+$('chf').onsubmit=e=>{e.preventDefault();sendChat($('chi').value)};
+$('aitest').onclick=async()=>{const m=$('aimsg'),st=$('aist');m.textContent='Testing…';st.textContent='● checking';
+  const a=await ai("You are Orbit AI. Reply with exactly this sentence and nothing else: Yes, I'm working boss! 😎",'Are you working?',40);m.textContent='';
+  if(!a){st.textContent='● resting';$('aim').classList.remove('ready');$('cht').innerHTML='';bub('bot','Orbit AI is resting right now. Built-in search is still on, so you can keep exploring.');$('cht').style.display='flex';return}
+  st.textContent='● online';$('aim').classList.add('ready');
+  if(!$('cht').children.length||$('cht').textContent.includes('resting')){$('cht').innerHTML='';bub('bot',a.length>90?"Yes, I'm working boss! 😎":a);bub('bot',UN?`Welcome back, ${UN}! What are you curious about today?`:"Before we chat, what's your name?")}}
+$('aim').addEventListener('click',e=>{const b=e.target.closest('.bch .chip');if(b){$('aim').classList.remove('on');dive(b.dataset.t,true)}});
 
 </script>
 </body></html>
